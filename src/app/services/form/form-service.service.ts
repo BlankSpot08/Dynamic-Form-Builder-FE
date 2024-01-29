@@ -60,5 +60,6 @@ export class FormService {
   onSubmit() {
     this.apiService.createForm(this.myForm.getRawValue())
     
+    this.myForm.reset()
   }
 }
