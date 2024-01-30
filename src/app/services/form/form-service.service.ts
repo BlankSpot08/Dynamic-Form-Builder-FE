@@ -24,10 +24,14 @@ export class FormService {
   constructor(
     private fb: FormBuilder, 
     private apiService: ApiService) { 
+    this.init();
+  }
+
+  init() {
     const inputGroup = this.fb.group({
       inputTitle: [ '', Validators.required ],
       inputType: [ 'title', Validators.required ],
-      inputDescription: [ '', Validators.required ],
+      inputDescription: [ null , Validators.required ],
     })
 
     const initFields = this.fb.array([ inputGroup ])
@@ -59,7 +63,8 @@ export class FormService {
 
   onSubmit() {
     this.apiService.createForm(this.myForm.getRawValue())
-    
+
     this.myForm.reset()
+    this.init();
   }
 }
