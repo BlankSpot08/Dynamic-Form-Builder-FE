@@ -15,11 +15,11 @@ export class ApiService {
 
   createForm(fields: string[]) {
     const createFormRequest = this.http.post(this.configService.getBaseURL() + '/form/create', fields)
-      .subscribe(
-        data => {
-          
-        }
-      )
+    .subscribe(
+      data => {
+        
+      }
+    )
   }
 
   createSubmission(title: string, answers: string[]) {
