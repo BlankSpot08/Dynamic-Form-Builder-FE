@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-6 mb-2 mx-auto">
+    <div class="col-6 mb-2 mx-auto" *ngIf="forms && forms.length > 0">
       <div class="card w-100">
         <div class="card-body">
           <div class="list-group d-flex justify-content-between" *ngFor="let form of forms; let i = index">
@@ -20,14 +20,11 @@
           </div>
         </div>
       </div>
-
-      <div class="row" *ngIf="forms && forms.length === 0">
-        <div class="col mx-auto text-center">
-          <h4>
-            The list is empty
-          </h4>
-        </div>
-      </div>
+    </div>
+    <div *ngIf="forms && forms.length === 0" class="col mx-auto text-center">
+      <h4>
+        The list is empty
+      </h4>
     </div>
   </div>
 </div>
