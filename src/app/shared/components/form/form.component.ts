@@ -35,7 +35,6 @@ export class FormComponent {
   addFieldGroup(type: string) {
     this.formService.addFieldGroup(type);
     this.myForm = this.formService.getMyForm();
-    console.log(this.fields)
   }
 
   onSubmit() {
