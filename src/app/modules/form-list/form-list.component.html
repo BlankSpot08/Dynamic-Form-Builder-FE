@@ -1,1 +1,16 @@
-listb
+<div class="container">
+  <div class="row">
+    <div class="col-5 text-center mx-auto">
+      <h1>Forms</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 mx-auto py-1 pt-2">
+      <div class="list-group d-flex justify-content-between" *ngFor="let form of forms; let i = index">
+        <a type="button" [routerLink]="['/form/fill-up/', form.title]" class="btn list-group-item list-group-item-action mb-1">
+            {{form.title}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
