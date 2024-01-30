@@ -41,7 +41,7 @@ export class FormService {
     const formGroup: FormGroup = this.fb.group({
       inputType: [ type, Validators.required ],
       inputLabel: [ '', Validators.required ],
-      inputPlaceholder: ['Enter your input here...'],
+      inputPlaceholder: [''],
       inputAnswer: ['']
     })
 
