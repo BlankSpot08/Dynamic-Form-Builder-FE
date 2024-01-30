@@ -1,11 +1,8 @@
 import { Component, Input, Type, Injector } from '@angular/core';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { FormGroup, AbstractControl, FormControl } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
-import { FormField } from '../interface/form-field';
 import { FORM_INPUTS } from '../../../../config/constants';
-import { FormService } from '../../../../services/form/form-service.service';
 
 @Component({
   selector: 'app-form-item',
@@ -17,12 +14,14 @@ import { FormService } from '../../../../services/form/form-service.service';
 export class FormItemComponent {
   @Input() group!: FormGroup;
   @Input() index!: number;
+  @Input() field!: any;
 
   component!: Type<any>;
   toPass!: Injector;
 
   ngOnInit() {
-    const type = this.group.value['inputType']
+    const type: string = this.group?.value?.inputType ?? (this.field && this.field.type);
+
     this.component = FORM_INPUTS[type];
 
     this.toPass = Injector.create({
@@ -30,6 +29,10 @@ export class FormItemComponent {
         { 
           provide: 'group', 
           useValue: this.group
+        },
+        {
+          provide: 'field',
+          useValue: this.field
         }
       ],
       parent: this.injector
