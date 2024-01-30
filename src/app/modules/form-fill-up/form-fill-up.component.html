@@ -1,0 +1,14 @@
+<div class="container bg-warning">
+    <div class="row">
+        <div class="col-7 mx-auto text-center bg-secondary">
+            <app-form-view-title *ngIf="form && form.title && form.description"
+                [title]="form.title" [description]="form.description"></app-form-view-title>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-7 mx-auto">
+            <app-form-fill [info]="form" />
+        </div>
+    </div>
+</div>
