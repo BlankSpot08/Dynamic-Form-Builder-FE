@@ -21,6 +21,5 @@ export class FormFillDropdownComponent {
   }
 
   ngOnInit() {
-    console.log('Dropdown')
   }
 }
