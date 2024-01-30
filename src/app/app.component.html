@@ -1,13 +1,17 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-2 bg-danger">
-            <nav class="nav flex-column">
-                <a class="nav-link active" routerLink="/form/list" >List of Form</a>
-                <a class="nav-link" routerLink="/form/create">Create Form</a>
-            </nav>
-        </div>
-        <div class="col bg-primary">
-            <router-outlet />
-        </div>  
+<div class="test">
+  <div class="row h-100">
+    <div class="col-2 p-0 m-0 bg-white sidenav h-100">
+      <ul class="nav flex-column list-group">
+        <li class="nav-item list-group-item p-0 list-group-item-action">
+          <a class="nav-link p-3" aria-current="page" routerLink="/form/list" >List of Form</a>
+        </li>
+        <li class="nav-item list-group-item p-0 list-group-item-action">
+          <a class="nav-link p-3" routerLink="/form/create">Create Form</a>
+        </li>
+      </ul>
     </div>
+    <div class="col offset-2 p-0 h-100">
+      <router-outlet />
+    </div>  
+  </div>
 </div>

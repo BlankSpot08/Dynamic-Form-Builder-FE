@@ -1,0 +1,19 @@
+.list-group-item {
+    border-radius:0px 0px 0px 0px;
+}
+
+.nav-item a {
+    color: black !important;
+}
+
+.darkens :hover {
+    background-color: gray;
+    color: white !important;
+}
+
+.sidenav {
+    background-color: white;
+    height: 100% !important;
+    min-height: 100% !important;
+    position: fixed
+}
