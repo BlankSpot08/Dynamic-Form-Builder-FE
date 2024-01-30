@@ -42,7 +42,6 @@ export class FormComponent {
   onSubmit() {
     this.formService.onSubmit();
 
-    this.ngOnInit()
     this.router.navigate(['/'])
   }
 }
