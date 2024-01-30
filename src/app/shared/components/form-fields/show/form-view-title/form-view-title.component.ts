@@ -11,6 +11,6 @@ import { FormItemComponent } from '../../form-item/form-item.component';
   styleUrl: './form-view-title.component.css'
 })
 export class FormViewTitleComponent implements FormField {
-  @Input() title: string = '';
+  @Input() title!: string;
   @Input() description!: string;
 }
