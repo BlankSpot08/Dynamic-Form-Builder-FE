@@ -6,26 +6,39 @@ import { ConfigService } from '../config/config.service';
   providedIn: 'root'
 })
 export class ApiService {
-    constructor(
-      private configService: ConfigService, 
-      private http: HttpClient
-    ) 
-    { }
+  forms: any
 
-    createForm(fields: string[]) {
-      const createFormRequest = this.http.post(this.configService.getBaseURL() + '/form/create', fields)
-        .subscribe(
-          data => {
-            
-          }
-        )
-    }
+  constructor(
+    private configService: ConfigService, 
+    private http: HttpClient
+  ) {}
 
-    getAllForms() {
-      const getAllFormRequest = this.http.get(this.configService.getBaseURL() + '/form/get-all')
-    }
+  createForm(fields: string[]) {
+    const createFormRequest = this.http.post(this.configService.getBaseURL() + '/form/create', fields)
+      .subscribe(
+        data => {
+          
+        }
+      )
+  }
 
-    getFormByTitle(title: string) {
-      const getFormByTitleRequest = this.http.get(this.configService.getBaseURL() + '/form/get ')
-    }
+  createSubmission(title: string, answers: string[]) {
+    const createSubmissionFormRequest = this.http.post(this.configService.getBaseURL() + '/submission/create?title=' + title, {
+      answers: answers
+    })
+    .subscribe(
+      data => {
+        
+      }
+    )
+  }
+
+  async getAllForms() {
+    const getAllFormRequest = this.http.get(this.configService.getBaseURL() + '/form/get-all')
+    
+  }
+
+  getFormByTitle(title: string) {
+    const getFormByTitleRequest = this.http.get(this.configService.getBaseURL() + '/form/get ')
+  }
 }
