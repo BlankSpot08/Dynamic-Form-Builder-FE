@@ -15,11 +15,9 @@ export class FormFillSelectComponent {
   @Input() group!: FormGroup;
 
   constructor() {
-    console.log('yep')
   }
 
   ngOnInit() {
-    console.log(this.group)
   }
 
   getFormControl(abs: AbstractControl): FormControl {
