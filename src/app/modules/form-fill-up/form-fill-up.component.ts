@@ -9,16 +9,16 @@ import { FormFillComponent } from '../../shared/components/form-fill/form-fill.c
 @Component({
   selector: 'app-form-fill-up',
   standalone: true,
-  imports: [CommonModule, FormViewTitleComponent, FormFillComponent],
+  imports: [CommonModule, FormViewTitleComponent, FormFillComponent, ],
   templateUrl: './form-fill-up.component.html',
   styleUrl: './form-fill-up.component.css'
 })
 export class FormFillUpComponent {
   form!: any
 
-  constructor(private httpClient: HttpClient, private configService: ConfigService, private route: ActivatedRoute) {
-    
-  }
+  constructor(private httpClient: HttpClient, 
+    private configService: ConfigService, 
+    private route: ActivatedRoute) {  }
 
   ngOnInit() {
     const parameter = this.route.snapshot.paramMap.get('title');
