@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 
-import { FormLabelComponent } from '../../../form-parts/form-label/form-label.component';
-import { FormInputComponent } from '../../../form-parts/form-input/form-input.component';
+import { FormLabelComponent } from '../../../form-parts/creates/form-label/form-label.component';
+import { FormInputComponent } from '../../../form-parts/creates/form-input/form-input.component';
 
 import { FormField } from '../../interface/form-field';
 import { FormGroup } from '@angular/forms';
