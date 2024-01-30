@@ -1,8 +1,9 @@
 <form [formGroup]="group">
-    <input type="text"
+    <input [type]="type"
         formControlName="answer"
         [placeholder]="placeHolder" 
         class="form-control form-control-sm w-100 mb-2" 
         placeholder="Enter the label"
+        required
     /> 
 </form>
