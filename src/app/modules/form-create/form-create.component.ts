@@ -4,9 +4,6 @@ import { CommonModule } from '@angular/common';
 
 import { FormComponent } from '../../shared/components/form/form.component';
 
-import { Form } from '../../models/form';
-import { FormField } from '../../shared/components/form-fields/interface/form-field';
-
 import { FormCreateService } from '../../services/form-create/form-create.service';
 
 @Component({
