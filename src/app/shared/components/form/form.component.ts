@@ -6,6 +6,7 @@ import { FormItemComponent } from '../form-fields/form-item/form-item.component'
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl, ReactiveFormsModule, AbstractControl } from '@angular/forms';
 import { FormInput } from '../../../models/form-field/form-input';
 import { FormService } from '../../../services/form/form-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -22,7 +23,8 @@ export class FormComponent {
     return this.myForm.controls['fields'] as FormArray;
   }
 
-  constructor(private formService: FormService) {}
+  constructor(private router: Router, 
+    private formService: FormService) {}
 
   ngOnInit() {
     this.myForm = this.formService.getMyForm();
@@ -39,5 +41,8 @@ export class FormComponent {
 
   onSubmit() {
     this.formService.onSubmit();
+
+    this.ngOnInit()
+    this.router.navigate(['/'])
   }
 }
