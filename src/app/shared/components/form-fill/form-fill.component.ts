@@ -50,25 +50,27 @@ export class FormFillComponent {
   }
     
   ngOnInit() {
-    setTimeout(() => {
-      this.fields = this.info.fields
+    this.init();
+  }
 
+  init() {
+    this.fields = this.info?.fields ?? undefined
+
+    if (this.fields != null) {
       for (let i = 0; i < this.fields.length; i++) {
         (this.fields[i] as any).type = 'fill'+this.fields[i]['type']
 
         this.answers.push(this.createAnswer())
       }
-    }, 100);
+    } else {
+      setTimeout(() => this.init(), 200)
+    }
   }
   
   onSubmit() {
     const flattenedAnswers: string[] = this.form.getRawValue().answers.flatMap((item: { answer: any; }) => item.answer);
 
     this.apiService.createSubmission(this.info.title, flattenedAnswers)
-    // this.form.reset()
-    // this.initForm()
-    console.log('shad')
-
     this.router.navigate([''])
   }
 }
