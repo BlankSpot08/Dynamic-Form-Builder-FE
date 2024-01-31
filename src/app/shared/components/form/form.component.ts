@@ -23,7 +23,13 @@ export class FormComponent {
   }
 
   constructor(private router: Router, 
-    private formService: FormService) {}
+    private formService: FormService) {
+      router.events.subscribe(val => {
+        if (location.pathname !== '/form/create') {
+          this.formService.init();
+        }
+      })
+    }
 
   ngOnInit() {
     this.myForm = this.formService.getMyForm();
